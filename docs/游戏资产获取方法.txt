@@ -1,0 +1,45 @@
+游戏开发过程中允许主动从互联网搜索、下载并复用合适的游戏资产，不需要等待我逐个提供素材。
+
+资产来源优先级：
+
+1. Kenney
+   https://kenney.nl/assets
+
+2. OpenGameArt
+   https://opengameart.org/
+   优先搜索 CC0 素材。
+
+3. itch.io Game Assets
+   https://itch.io/game-assets
+   优先搜索 Free、CC0、Pixel Art、Top-Down、2D、Sprites、Tileset、UI、Sound Effects 等分类。
+
+4. GitHub
+   主动搜索 CC0 / Public Domain 的 pixel game assets、top-down sprites、Godot assets、pixel VFX、icons、tilesets 等开源素材仓库。
+
+5. GameDev Market
+   https://www.gamedevmarket.net/
+   可寻找免费或合适的角色、UI、FX、环境和道具素材。
+
+6. Freesound
+   https://freesound.org/
+   用于寻找攻击、受击、Boss、爆炸、掉落、UI、环境、移动等游戏音效。
+
+执行时允许自行：
+搜索 → 查看预览 → 下载 ZIP/PNG/SpriteSheet/WAV/OGG → 解压 → 筛选 → 裁切/转换 → 导入 Godot → 配置 SpriteFrames、TileSet、AudioStream 等资源 → 实际接入游戏并测试。
+
+优先选择 CC0、Public Domain 或许可证明确允许游戏使用和修改的资产，并在项目中建立 assets_sources.md，记录素材名称、来源网址和许可证，避免以后无法追溯来源。
+
+下载的素材必须与当前游戏的可爱像素风、Top-down 视角和现有色彩风格协调。不要为了使用素材而强行改变游戏整体风格。
+
+对于通用素材，例如：
+地图地块、草地、水面、树木、粒子、爆炸、烟雾、攻击特效、通用 UI、按钮、音效、环境音、金币/掉落动画等，优先从上述素材库寻找并复用。
+
+对于项目专属内容，例如：
+一二、布布、大甜莓、专属 Boss、特色敌人、特色武器、装备、核心强化、剧情相关资产等，优先调用当前已经配置好的 image2.5 生成。
+
+如果找到的现成素材功能和动画很好，但画风不一致，可以将其作为动作、构图、帧序列或视觉参考，再通过 image2.5 重新生成符合本项目风格的原创版本。
+
+任何下载资产在正式接入前都需要检查：
+尺寸、分辨率、透明通道、SpriteSheet 布局、动画帧数、像素比例、视角以及与当前 Godot 项目的兼容性。
+
+不要仅仅把素材下载进项目目录。只有实际需要并已经接入游戏的资源才保留，删除无用原始素材和重复文件，避免项目体积无意义膨胀。
