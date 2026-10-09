@@ -16,7 +16,7 @@ jobs:
       contents: write
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Read project versions
         id: version
@@ -38,7 +38,7 @@ jobs:
           echo "godot_version=$GODOT_VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: "17"
@@ -125,7 +125,7 @@ jobs:
 
       - name: Upload test APK
         if: success()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: YierBubu-Garden-v${{ steps.version.outputs.app_version }}-Android
           path: |
@@ -136,7 +136,7 @@ jobs:
 
       - name: Upload export log on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: android-export-log
           path: ${{ runner.temp }}/export.log
